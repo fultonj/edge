@@ -1,0 +1,16 @@
+---
+parameter_defaults:
+  NtpServer:
+    - clock.redhat.com
+    - clock2.redhat.com
+  ControllerCount: 3
+  ComputeCount: 0
+  OvercloudControlFlavor: baremetal
+  OvercloudComputeFlavor: baremetal
+  ControllerSchedulerHints:
+    'capabilities:node': '0-controller-%index%'
+  ContainerHealthcheckDisabled: true
+  GlanceBackend: swift
+  ControllerExtraConfig:
+    oslo_messaging_notify_use_ssl: false
+    oslo_messaging_rpc_use_ssl: false

@@ -1,0 +1,15 @@
+---
+parameter_defaults:
+  NtpServer:
+    - clock.redhat.com
+    - clock2.redhat.com
+  ControllerCount: 0
+  ComputeCount: 0
+  DistributedComputeHCICount: 3
+  DistributedComputeHCIFlavor: baremetal
+  DistributedComputeHCISchedulerHints:
+    'capabilities:node': '0-ceph-%index%'
+  ContainerHealthcheckDisabled: true
+  CinderStorageAvailabilityZone: edge0
+  NovaComputeAvailabilityZone: edge0
+  NovaAZAttach: false

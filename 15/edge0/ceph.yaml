@@ -1,0 +1,32 @@
+---
+parameter_defaults:
+  CephAnsiblePlaybookVerbosity: 3
+  CephPoolDefaultSize: 3
+  CephConfigOverrides:
+    osd_recovery_op_priority: 3
+    osd_recovery_max_active: 3
+    osd_max_backfills: 1
+  CephAnsibleDisksConfig:
+    osd_scenario: lvm
+    osd_objectstore: bluestore
+    devices:
+      - /dev/sda
+      - /dev/sdb
+      - /dev/sdc
+      - /dev/sdd
+      - /dev/sde
+      - /dev/sdf
+      - /dev/sdg
+      - /dev/sdh
+      - /dev/sdi
+      - /dev/sdj
+      - /dev/sdk
+      - /dev/sdl
+  CephAnsibleExtraConfig:
+    ceph_osd_docker_cpu_limit: 1
+    is_hci: true
+  CephAnsibleEnvironmentVariables:
+    ANSIBLE_PRIVATE_KEY_FILE: '/home/stack/.ssh/id_rsa'
+    ANSIBLE_HOST_KEY_CHECKING: 'False'
+  EnableRhcs4Beta: true
+  NovaEnableRbdBackend: false
