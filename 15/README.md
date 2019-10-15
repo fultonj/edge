@@ -7,7 +7,7 @@
 - 3 nodes introspected by Ironic which can act as HCI compute/ceph nodes at edge site 1
 - For each additional edge site, 3 more HCI compute/ceph nodes may be added
 
-## Procedure (working links coming soon)
+## Procedure
 
 - Modify [containers.yaml](containers.yaml) to use your Registry Service Account credentials and run [containers.sh](containers.sh), to [obtain the container images](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/15/html/transitioning_to_containerized_services/obtaining-container-images).
 - Use [deploy.sh](central/deploy.sh) to deploy central controllers with [central/overrides.yaml](central/overrides.yaml)
