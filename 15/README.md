@@ -5,7 +5,7 @@
 - Access to the the Red Hat Ceph Storage 4 beta
 - 3 nodes introspected by Ironic which can act as central Controllers
 - 3 nodes introspected by Ironic which can act as HCI compute/ceph nodes at edge site 1
-- For each additional edge site, 3 more HCI compute/ceph nodes
+- For each additional edge site, 3 more HCI compute/ceph nodes may be added
 
 ## Procedure (working links coming soon)
 
@@ -20,19 +20,17 @@
 
 Each Edge site is deployed in its own availability zone (used by Nova and Cinder)
 
-### Glance
-- Glance with Swift is used at the Central Site
-- At any edge site Glance cache uses local disk
-- The first Nova instance booted in an edge site availability zone will use HTTP GET to retrieve the image at the central site
-- Subsequent Nova instnaces booted will use the cached copy of the image (provided the instance is booted on the same node where the image is cached)
-
 ### Cinder
 - At any edge site a Cinder availability zone exists running the cinder-volume service
 - The cinder-volume service will support running in full active/active in a future OSP15 update
 
+### Glance
+- Glance with Swift is used at the Central Site
+- Nova instances booted in an edge site availability zones will use HTTP GET to retrieve the image from the central site
+
 ### Ceph
-- Ceph is not running on the Central site
+- Ceph is not running on the Central site in this architecture
 - Each edge site runs its own Ceph cluster collocated (HCI) with Nova compute nodes
 - The Ceph backend is only used for Cinder Volumes
 
-This architecture will get improvements in the next version of OpenStack.
+This architecture will get improvements over time.
