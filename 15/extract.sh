@@ -31,6 +31,8 @@ openstack stack output show $SRC GlobalConfig --format json \
 openstack object save $SRC plan-environment.yaml
 python3 -c "import yaml; data=yaml.safe_load(open('plan-environment.yaml').read()); print(yaml.dump(dict(parameter_defaults=data['passwords'])))" > $DIR/passwords.yaml
 rm -f plan-environment.yaml
+# workaround https://bugzilla.redhat.com/1762360
+sed -i '/Ceph/d' passwords.yaml
 
 # Show user overview of extracted data
 wc -l $DIR/*
