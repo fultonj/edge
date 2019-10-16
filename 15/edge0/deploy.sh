@@ -8,6 +8,9 @@ time openstack overcloud deploy \
      --stack $STACK \
      --templates /usr/share/openstack-tripleo-heat-templates/ \
      -r distributed_compute_hci.yaml \
+     -e /usr/share/openstack-tripleo-heat-templates/environments/disable-telemetry.yaml \
+     -e /usr/share/openstack-tripleo-heat-templates/environments/low-memory-usage.yaml \
+     -e /usr/share/openstack-tripleo-heat-templates/environments/enable-swap.yaml \
      -e /usr/share/openstack-tripleo-heat-templates/environments/podman.yaml \
      -e /usr/share/openstack-tripleo-heat-templates/environments/ceph-ansible/ceph-ansible.yaml \
      -e ../edge-common/endpoint-map.json \
