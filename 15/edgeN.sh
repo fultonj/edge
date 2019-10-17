@@ -16,7 +16,7 @@ fi
 if [[ -z $2 ]]; then
     K=3
 else
-    K=$1
+    K=$2
 fi
 if [[ $K -lt 1 ]]; then
     echo "Only positive integers for the number of nodes per deployment please"
