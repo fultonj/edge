@@ -1,11 +1,9 @@
 ---
 parameter_defaults:
+  NovaEnableRbdBackend: false
+  EnableRhcs4Beta: true
   CephAnsiblePlaybookVerbosity: 3
   CephPoolDefaultSize: 3
-  CephConfigOverrides:
-    osd_recovery_op_priority: 3
-    osd_recovery_max_active: 3
-    osd_max_backfills: 1
   CephAnsibleDisksConfig:
     osd_scenario: lvm
     osd_objectstore: bluestore
@@ -22,8 +20,17 @@ parameter_defaults:
       - /dev/sdj
       - /dev/sdk
       - /dev/sdl
+  ## HCI Tuning
   CephAnsibleExtraConfig:
     ceph_osd_docker_cpu_limit: 1
     is_hci: true
-  EnableRhcs4Beta: true
-  NovaEnableRbdBackend: false
+  CephConfigOverrides:
+    osd_recovery_op_priority: 3
+    osd_recovery_max_active: 3
+    osd_max_backfills: 1
+  ## Set relative to your hardware: 
+  ##   https://red.ht/2pxAhVW
+  # DistributedComputeHCIParameters:
+  #   NovaReservedHostMemory: 181000
+  # DistributedComputeHCIExtraConfig:
+  #   nova::cpu_allocation_ratio: 8.2
