@@ -3,6 +3,7 @@ parameter_defaults:
   NovaEnableRbdBackend: false
   EnableRhcs4Beta: true
   CephAnsiblePlaybookVerbosity: 3
+  CephPoolDefaultPgNum: 256
   CephPoolDefaultSize: 3
   CephAnsibleDisksConfig:
     osd_scenario: lvm
