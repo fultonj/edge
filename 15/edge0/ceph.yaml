@@ -25,8 +25,5 @@ parameter_defaults:
   CephAnsibleExtraConfig:
     ceph_osd_docker_cpu_limit: 1
     is_hci: true
-  CephAnsibleEnvironmentVariables:
-    ANSIBLE_PRIVATE_KEY_FILE: '/home/stack/.ssh/id_rsa'
-    ANSIBLE_HOST_KEY_CHECKING: 'False'
   EnableRhcs4Beta: true
   NovaEnableRbdBackend: false
