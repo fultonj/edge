@@ -34,3 +34,19 @@ Each Edge site is deployed in its own availability zone (used by Nova and Cinder
 - The Ceph backend is only used for Cinder Volumes
 
 This architecture will get improvements over time.
+
+## What's missing from this architecture
+
+- These scripts show show tech preview features of OSP15 to test today
+- It is missing the following pieces we need to be a true edge deployment
+  - We’re using Red Hat Ceph Storage 4 beta
+  - Glance multistore
+    - Not essential, but enough people may expect this
+    - In this example only Cinder is using Ceph
+- Spine/Leaf network
+  - There’s no routing in this example
+  - You may not share L2 across the WAN like this for real
+- Ironic DHCP Relay
+  - Using the same local Ironic and pretending the other nodes are miles away
+- Cinder Active/Active is not working
+  - Though deployment experience will be the same
