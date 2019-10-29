@@ -1,4 +1,6 @@
 #!/bin/bash
+# Replace this script with a tripleo command after the following is resolved:
+#   https://bugzilla.redhat.com/show_bug.cgi?id=1766711
 
 SRC=central
 DIR=edge-common
